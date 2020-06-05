@@ -1,0 +1,17 @@
+CREATE DATABASE `blockbuster`;
+USE `blockbuster`;
+
+CREATE TABLE IF NOT EXISTS `movies` (
+  `movie_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `length` varchar(64) NOT NULL,
+  `copies` int(3) NOT NULL,
+  `available` int(3) NOT NULL,
+  PRIMARY KEY (`movie_id`)
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+
+INSERT INTO `movies` (`title`, `length`, `copies`, `available`) VALUES ("The Irishman", "3h 30m", 3, 3);
+INSERT INTO `movies` (`title`, `length`, `copies`, `available`) VALUES ("The Boss Baby", "1h 37m", 7, 7);
+INSERT INTO `movies` (`title`, `length`, `copies`, `available`) VALUES ("Avengers: Infinity War", "2h 40m", 10, 10);
+INSERT INTO `movies` (`title`, `length`, `copies`, `available`) VALUES ("The Great Gatsby", "2h 23m", 12, 12);
+INSERT INTO `movies` (`title`, `length`, `copies`, `available`) VALUES ("Inception", " 2h 28m", 14, 14);
