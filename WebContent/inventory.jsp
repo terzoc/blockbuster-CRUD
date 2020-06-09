@@ -18,14 +18,14 @@
         
         <tr>
           <td>Title</td>
-          <td>Length</td>
+          <td>Runtime</td>
           <td>Copies</td>
           <td>Available</td>
         </tr>
         <c:forEach var="movie" items="${movies}">
           <tr>
             <td><c:out value="${movie.title}" /></td>
-            <td><c:out value="${movie.legnth}" /></td>
+            <td><c:out value="${movie.length}" /></td>
             <td><c:out value="${movie.copies}" /></td>
             <td><c:out value="${movie.available}" /></td>
           </tr>

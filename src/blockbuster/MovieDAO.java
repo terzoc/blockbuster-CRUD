@@ -36,7 +36,7 @@ public class MovieDAO {
 	    
 	    if (rs.next()) {
 	      String title = rs.getString("title");
-	      String length = rs.getString("legnth");
+	      String length = rs.getString("length");
 	      int copies = rs.getInt("copies");
 	      int available = rs.getInt("available");
 	      
@@ -54,7 +54,7 @@ public class MovieDAO {
 	  {
 	    final String sql = "SELECT * FROM movies ORDER BY movie_id ASC";
 	    
-	    List<Movie> movies = new ArrayList<>();
+	    List<Movie> movies = new ArrayList<Movie>();
 	    Connection conn = getConnection();
 	    Statement stmt = conn.createStatement();
 	    ResultSet rs = stmt.executeQuery(sql);
@@ -78,7 +78,7 @@ public class MovieDAO {
 	  
 	  public boolean insertMovie(Movie movie) throws SQLException
 	  {
-	    final String sql = "INSERT INTO movies (title, author, legnth, available) " +
+	    final String sql = "INSERT INTO movies (title, length, copies, available) " +
 	        "VALUES (?, ?, ?, ?)";
 	    
 	    Connection conn = getConnection();
