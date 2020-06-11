@@ -48,6 +48,30 @@ public class Movie {
 	    return available;
 	  }
 	    
+	  public void rentMe()
+	  {
+	    if (available > 0) {
+	      available--;
+	    }
+	  }
+	  
+	  public void returnMe()
+	  {
+	    if (available < copies) {
+	      available++;
+	    }
+	  }
+	  
+	  public void setTitle(String title)
+	  {
+	    this.title = title;
+	  }
+
+	  public void setLength(String length)
+	  {
+	    this.length = length;
+	  }
+
 	  public void setAvailable(int available)
 	  {
 	    this.available = available;

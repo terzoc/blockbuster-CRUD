@@ -76,7 +76,7 @@ public class MovieDAO {
 	    return movies;
 	  }
 	  
-	  public boolean insertMovie(Movie movie) throws SQLException
+	  public boolean insertMovie(String title, String length, int copies, int available) throws SQLException
 	  {
 	    final String sql = "INSERT INTO movies (title, length, copies, available) " +
 	        "VALUES (?, ?, ?, ?)";
@@ -84,10 +84,10 @@ public class MovieDAO {
 	    Connection conn = getConnection();
 	    PreparedStatement pstmt = conn.prepareStatement(sql);
 	    
-	    pstmt.setString(1, movie.getTitle());
-	    pstmt.setString(2, movie.getLength());
-	    pstmt.setInt(3, movie.getCopies());
-	    pstmt.setInt(4, movie.getAvailable());
+	    pstmt.setString(1, title);
+	    pstmt.setString(2, length);
+	    pstmt.setInt(3, copies);
+	    pstmt.setInt(4, available);
 	    int affected = pstmt.executeUpdate();
 	    
 	    pstmt.close();

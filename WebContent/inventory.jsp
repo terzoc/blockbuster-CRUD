@@ -5,22 +5,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>blockbuster</title>
+    <title>Blockbuster</title>
+    
+    <style type="text/css">
+      <%@ include file="css/styles.css" %>
+    </style>
+    
   </head>
   <body>
     <div>
       <h1>Inventory Management</h1>
-      <h2><a href="/movies">View All</a></h2>
+      <div class="header">
+        <a href="${pageContext.request.contextPath}/" class="header-button">VIEW ALL</a>
+	  	<a href="${pageContext.request.contextPath}/add" class="header-button">ADD A MOVIE</a> 
+	  	</div>
     </div>
     <div>
       <table border="1">
-        <caption>All Movies in Collection</caption>
         
         <tr>
-          <td>Title</td>
-          <td>Runtime</td>
-          <td>Copies</td>
-          <td>Available</td>
+           <th>Title</th>
+          <th>Runtime</th>
+          <th>Copies</th>
+          <th>Available</th>
+          <th>Actions</th>
         </tr>
         <c:forEach var="movie" items="${movies}">
           <tr>
@@ -28,6 +36,25 @@
             <td><c:out value="${movie.length}" /></td>
             <td><c:out value="${movie.copies}" /></td>
             <td><c:out value="${movie.available}" /></td>
+             <td>
+    		     <div>
+	     		   <a href="${pageContext.request.contextPath}/update?action=rent&id=${movie.id}"
+            	   class="button"
+          	      	>
+           	   	  	RENT
+              	    </a>
+              		<a href="${pageContext.request.contextPath}/update?action=return&id=${movie.id}"
+              	   class="button"
+              		>
+              	  RETURN
+              		</a>
+              		<a href="${pageContext.request.contextPath}/edit?id=${movie.id}"
+              	   class="button"
+              		>
+              		  EDIT
+              		</a>
+              	</div>
+      		</td>
           </tr>
         </c:forEach>
       </table>
